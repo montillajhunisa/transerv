@@ -1,0 +1,463 @@
+@font-face {
+    font-family: 'alyssum';
+    src: local('Alyssum Sans'),
+    url('./res/fonts/Alyssum-Regular.ttf') format('truetype');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+/*NAVIGATION BAR*/
+li,
+a,
+button {
+    font-weight: 500;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 1%;
+    background-image: linear-gradient(to right, #22D6F7, #40A8DC);
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+}
+
+.logo {
+    cursor: pointer;
+    margin-right: auto;
+    width: 150px;
+}
+
+.nav_links {
+    list-style: none;
+    text-decoration: none;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav_links a {
+    font-family: 'alyssum';
+    transition: all 0.3s ease 0s;
+    color: black;
+}
+
+.nav_links li a:hover {
+    color: white;
+}
+
+
+.find {
+    margin-left: 20px;
+    height: 30px;
+    width: 70px;
+    background-color: #22D6F7;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.find:hover {
+    background-color: white;
+}
+
+/*NAVIGATION ENDS HERE */
+
+/*HOME*/
+div#home {
+    height: 520;
+    width: 100%;
+}
+
+div#home img {
+    height: 700px;
+    width: 100%;
+    position: relative;
+    object-fit: cover;
+    box-shadow: 0px 30px 40px -25px rgba(0, 0, 0, 1);
+    margin-top: 20px;
+}
+
+div#home h1 {
+    position: absolute;
+    top: 350px;
+    margin: 50px;
+    font-size: 90px;
+    color: white;
+    margin-left: 150px;
+    font-family: 'alyssum';
+    text-transform: uppercase;
+    font-weight: 500px;
+    /* text-shadow: 2px 2px black; */
+}
+
+div#home h4 {
+    font-family: 'Trebuchet MS';
+    position: absolute;
+    top: 500px;
+    font-size: 30px;
+    margin-left: 150px;
+    color: white;
+}
+
+
+/*SEARCH*/
+#search-container {
+    text-align: center;
+    padding-top: 60px;
+    background-color: #E8E8E8;
+}
+
+#searchbar {
+    font-family: sans-serif;
+    font-size: 20px;
+    height: 50px;
+    width: 600px;
+    border: none;
+    border-radius: 25px;
+    padding-left: 30px;
+    background-color: #C1C2C0;
+}
+
+#searchbar:focus {
+    outline: none;
+}
+
+#search-container img {
+    width: 10%;
+    height: 10%;
+    padding: 0;
+    object-fit: contain;
+
+}
+
+#search-container #filterbtn {
+    border: none;
+    border-radius: 50%;
+    width: 20%;
+    height: 20%;
+    background-color: #22D6F7;
+}
+
+#search-container #sortbtn {
+    border: none;
+    border-radius: 50%;
+    width: 20%;
+    height: 20%;
+    background-color: #22D6F7;
+}
+
+/*TRANSIENT LIST*/
+
+div#transient-list {
+    background-color: #E8E8E8;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: 25px;
+    padding: 50px;
+    padding-left: 75px;
+}
+
+.filter-box {
+    height: 20px;
+    width: 60%;
+    display: flex;
+    background-color: #E8E8E8;
+    padding-left: 60px;
+}
+
+.filter-box ul li {
+    list-style: none;
+    padding: 10px;
+    margin: 10px;
+    float: left;
+    border-radius: 25px;
+    background: #22d6f7;
+    width: 100px;
+  }
+  
+  .filter-box ul li a {
+    color: inherit;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+  }
+  
+  .filter-box ul li:hover {
+    color: white;
+  }
+  
+  .filter-box ul li:active {
+    color: white;
+    font-weight: bold;
+    background: #40A8DC;
+  }
+  
+  .filter-box ul li:active a {
+    color: white;
+    font-weight: bold;
+  }
+
+.sort-box,
+.tag-box {
+    position: relative;
+    max-width: 320px;
+    width: 30%;
+    float: right;
+    margin: 80px auto 30px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.sort-btn,
+.select-btn {
+    z-index: -1;
+    display: flex;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.select-btn:hover {
+    transition: all 0.3s ease 0s;
+    background: #22D6F7;
+}
+
+.sort-btn:hover {
+    transition: all 0.3s ease 0s;
+    background: #22D6F7;
+}
+
+.select-btn .btn-text {
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+}
+
+.sort-box .sort-select {
+    position: absolute;
+    z-index: 1;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    background: white;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+    height: 220px;
+    display: none;
+}
+
+.sort {
+    display: flex;
+    height: 50px;
+    cursor: pointer;
+    padding: 0 16px;
+    border-radius: 15px;
+    align-items: center;
+    background: white;
+}
+
+.sort:hover {
+    transition: all 0.3s ease 0s;
+    background: #22D6F7;
+}
+
+.sort-btn .material-symbols-outlined,
+.select-btn .material-symbols-outlined {
+    display: flex;
+    height: 21px;
+    width: 21px;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 50%;
+    background: #22D6F7;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.sort-btn.open .material-symbols-outlined,
+.select-btn.open .material-symbols-outlined {
+    transform: rotate(-180deg);
+}
+
+.list-items {
+    position: absolute;
+    z-index: 1;
+    margin-top: 15px;
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.select-btn.open~.list-items {
+    display: block;
+}
+
+.list-items .item {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    height: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+    padding: 0 15px;
+    border-radius: 8px;
+}
+
+.list-items .item:hover {
+    background-color: #e7edfe;
+}
+
+.item .item-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: #333;
+}
+
+.item .material-symbols-outlined {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 16px;
+    width: 16px;
+    border-radius: 4px;
+    margin-right: 12px;
+    border: 1.5px solid #c0c0c0;
+    transition: all 0.3s ease-in-out;
+}
+
+.item.selected {
+    background-color: #22D6F7;
+    border-style: 2px solid white;
+}
+
+.item.selected {
+    transform: scale(1);
+}
+
+.filter-sort-box {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #E8E8E8;
+}
+
+div#transient-list .box {
+    padding: 2.5rem;
+    background: #F6F6F6;
+    border-radius: 20px;
+    box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+    padding-bottom: 20px;
+    width: 400px;
+    font-family: sans-serif;
+}
+
+div#transient-list img {
+    width: 320px;
+    border-radius: 10px;
+    height: auto;
+}
+
+div#transient-list .btn {
+    margin-top: 1rem;
+    color: black;
+    background: #22D6F7;
+    cursor: pointer;
+    border-radius: 18px;
+    padding: 15px;
+    display: flex;
+    width: 150px;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box h3 {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.box p:nth-child(4) {
+    font-size: 18px;
+}
+
+.box p:nth-child(5) {
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.button-container {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#prevButton,
+#nextButton {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    width: 20%;
+}
+
+#prevButton:disabled,
+#nextButton:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#prevButton {
+    margin-right: 20px;
+}
+
+#about {
+    padding: 20px;
+    background-color: white;
+    height: 500px;
+    text-align: center;
+}
+
+
+
+/* FOOTER */
+footer {
+    height: 40px;
+    padding: 10px 1%;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-image: linear-gradient(to right, #22D6F7, #40A8DC);
+    color: black;
+    text-align: center;
+}
+
+footer p {
+    font-family: 'alyssum';
+}
+
+/*FOOTER ENDS HERE*/
